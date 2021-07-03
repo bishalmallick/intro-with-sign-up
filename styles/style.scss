@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+$red: hsl(0, 100%, 74%);
+$green: hsl(154, 59%, 51%);
+$blue: hsl(248, 32%, 49%);
+$dark-blue: hsl(249, 10%, 26%);
+$grayish-blue: hsl(246, 25%, 77%);
+
+$font: 'Poppins', sans-serif;
+
+*, 
+*::before, 
+*::after { 
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0; 
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 10%;
+    background:  url("../images/bg-intro-desktop.png"), $red;
+}
+
+.text {
+    flex-basis: 100%;
+    h1 {
+        color: #fff;
+        font-size: 3em;
+        line-height: 1.2;
+    }
+    p {
+        color: #fff;
+        font-size: 1em;
+        margin-top: 2em;
+    }
+}
+
+.section {
+    flex-basis: 100%;
+    button {
+        background-color: $blue;
+        font-family: $font;
+        font-size: 1em;
+        font-weight: 400;
+        width: 100%;
+        padding: 1em;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 10px hsl(0, 56%, 61%);
+        span {
+            font-weight: 600;
+        }
+    }
+    p {
+        font-size: 0.8em;
+        text-align: center;
+        margin: 1em;
+        font-weight: 400;
+        color: $grayish-blue;
+        span {
+            color: $red;
+            font-weight: 700;
+        }
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    color: $dark-blue;
+    background-color: #fff;
+    margin-top: 1.5em;
+    padding: 2em;
+    box-shadow: 0 10px hsl(0, 56%, 61%);
+    border-radius: 10px;
+    .form-group {
+        position: relative;
+    }
+    input {
+        font-family: $font;
+        font-weight: 700;
+        padding: 1.5em 2em;
+        margin: 0.5em;
+        border-radius: 10px;
+        border: 1px solid #c3cad8;
+        width: 97%;
+        &::placeholder {
+            font-family: $font;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+    }
+    em {
+        font-size: 0.7em;
+        text-align: right;
+        color: $red;
+        margin: 0 1em;
+        display: none;
+    }
+    .submit {
+        background-color: $green;
+        text-transform: uppercase;
+        box-shadow: 0 5px #55ab86;
+        font-weight: 600;
+        margin: 0.5em;
+        width: auto;
+        cursor: pointer;
+    }
+    .ip-error {
+        border: 2px solid $red;
+    }
+    .error {
+        position: absolute;
+        width: 5%;
+        top: 30%;
+        right: 5%;
+        display: none;
+    }
+}
+
+.attribution {
+    padding: 1em;
+    font-size: 1em;
+    background: $blue;
+    color: #fff;
+    text-align: center;
+    a {
+        text-decoration: none;
+        color: $green;
+    }
+}
+
+@media (max-width: 900px) {
+    body {
+        .container {
+            background: url('../images/bg-intro-mobile.png'), $red;
+            flex-direction: column;
+            height: auto;
+        }
+        .section {
+            margin-top: 2em;
+        }
+    }
+}
